@@ -5,10 +5,13 @@
 const table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
 
+
 function loadCart() {
   const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
   state.cart = new Cart(cartItems);
 }
+
+
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
 function renderCart() {
