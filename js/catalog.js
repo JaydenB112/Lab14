@@ -12,7 +12,9 @@ function populateForm() {
   //TODO: Add an <option> tag inside the form's select for each product
   const selectElement = document.getElementById('items');
   for (let i in state.allProducts) {
-
+    let optionTag = document.createElement("option")
+    optionTag.innerHTML = state.allProducts[i].name;
+    selectElement.append(optionTag)
   }
 
 }
@@ -23,6 +25,7 @@ function populateForm() {
 function handleSubmit(event) {
 
   // TODO: Prevent the page from reloading
+  event.preventDefault();
 
   // Do all the things ...
   addSelectedItemToCart();
@@ -37,12 +40,26 @@ function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
+  let newProduct = undefined
+  state.cart.items  document.getElementById('items') document.getElementById('quantity')
+  // let newProduct = document.getElementById('items')
+  let newPQuantity = document.getElementById('quantity')
+  state.cart.items.push(new CartItem(newProduct, newPQuantity))
 }
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
+  let itemName = document.getElementById('items').value
+  let itemQuantity = document.getElementById('quantity').value
+  let preview = document.createElement('p')
+  preview.id = 'fred'
+
+  // for(let i = 0; i < state.allProducts.length; i++){
+  // }
+preview.innerHTML = '${itemQuantity} ${itemName}';
+  document.getElementById('cartContents').append()
 }
 
 // Set up the "submit" event listener on the form.

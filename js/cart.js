@@ -7,7 +7,14 @@ table.addEventListener('click', removeItemFromCart);
 
 
 function loadCart() {
-  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  // const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+let cartString = localStorage.getItem("cart")
+let cartObject = JSON.parse(cartString)
+if(cartObject == undefined)P{
+  cartItems = []
+}else{
+  cartItems = cartObject.Items
+}
   state.cart = new Cart(cartItems);
 }
 
@@ -21,7 +28,11 @@ function renderCart() {
 }
 
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
-function clearCart() {}
+
+function clearCart() {
+  state.cart.Items = []
+  localStorage.setItem('cart', JSON.stringify(state.cart))
+}
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {

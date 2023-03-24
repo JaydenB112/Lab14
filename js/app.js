@@ -14,7 +14,7 @@ const Cart = function(items) {
 
 Cart.prototype.addItem = function(product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
-  let newItem= new CartItem(product,quantity)
+  let newItem = new CartItem(product,quantity)
   this.items.push(newItem)
 };
 
@@ -31,6 +31,7 @@ Cart.prototype.removeItem = function(index) {
 
 Cart.prototype.updateCounter = function() {
   // TODO: Update the cart count in the header nav with the number of items in the Cart
+  document.getElementById("itemCount") = this.items.length
 }
 
 const CartItem = function(product, quantity) {
