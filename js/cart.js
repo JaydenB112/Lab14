@@ -10,7 +10,7 @@ function loadCart() {
   // const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 let cartString = localStorage.getItem("cart")
 let cartObject = JSON.parse(cartString)
-if(cartObject == undefined)P{
+if(cartObject == undefined){
   cartItems = []
 }else{
   cartItems = cartObject.Items
