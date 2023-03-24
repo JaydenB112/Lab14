@@ -40,11 +40,16 @@ function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
-  let newProduct = undefined
-  state.cart.items  document.getElementById('items') document.getElementById('quantity')
-  // let newProduct = document.getElementById('items')
-  let newPQuantity = document.getElementById('quantity')
-  state.cart.items.push(new CartItem(newProduct, newPQuantity))
+  let select = document.getElementById("items")
+  let selectedProductName = select.value
+  let productObject = undefined
+  for(let i = 0; i < state.allProducts.length; i++){
+    if(state.allProducts[i].name === selectedProductName ){
+      productObject = state.allProducts[i]
+    }
+  }
+
+
 }
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
