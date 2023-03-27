@@ -32,11 +32,17 @@ function renderCart() {
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 
 function clearCart() {
-  state.cart.Items = []
-  let stateCartJson = JSON.stringify(state.cart)
-  localStorage.setItem('cart',stateCartJson)
+  // state.cart.Items = []
+  // let stateCartJson = JSON.stringify(state.cart)
+  // localStorage.setItem('cart',stateCartJson)
+  // let element= document.getElementByTagName('tr')
+  // element.remove()
+  let gititgone = document.querySelectorAll('tr tbody')
+  for(let i =0; i< gititgone.length; i++){
+    gititgone[i].remove()
+  }
 }
-
+console.log(clearCart())
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
 
