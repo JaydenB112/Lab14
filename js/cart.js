@@ -31,7 +31,8 @@ function renderCart() {
 
 function clearCart() {
   state.cart.Items = []
-  localStorage.setItem('cart', JSON.stringify(state.cart))
+  let stateCartJson = JSON.stringify(state.cart)
+  localStorage.setItem('cart',stateCartJson)
 }
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
