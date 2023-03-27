@@ -37,7 +37,7 @@ function clearCart() {
   // localStorage.setItem('cart',stateCartJson)
   // let element= document.getElementByTagName('tr')
   // element.remove()
-  let gititgone = document.querySelectorAll('tr tbody')
+  let gititgone = document.querySelectorAll('tbody tr')
   for(let i =0; i< gititgone.length; i++){
     gititgone[i].remove()
   }
