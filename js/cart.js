@@ -32,12 +32,36 @@ function renderCart() {
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 
 function clearCart() {
-  state.cart.Items = []
-  localStorage.setItem('cart', JSON.stringify(state.cart))
+  // state.cart.Items = []
+  // let stateCartJson = JSON.stringify(state.cart)
+  // localStorage.setItem('cart',stateCartJson)
+  // let element= document.getElementByTagName('tr')
+  // element.remove()
+  let gititgone = document.querySelectorAll('tr tbody')
+  for(let i =0; i< gititgone.length; i++){
+    gititgone[i].remove()
+  }
 }
+console.log(clearCart())
+
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
+let tableBody = document.querySelector("tbody")
+for(i = 0; i < state.cart.items.length; i++){
+  let daRow = document.createElement("tr")
+// let daData = document.createElement("td")
+let deleteData = document.createElement("td")
+let quantityData = document.createElement("td")
+let itemData = document.createElement("td")
+//moire tds
+itemData.innerHTML = state.cart.items[i].product.name
+//set other tds
+daRow.append(daData)
+//append tds
+tableBody.append(daRow)
+}
+
 
   // TODO: Find the table body
 
@@ -46,7 +70,7 @@ function showCart() {
   // TODO: Create a TD for the delete link, quantity,  and the item
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
 
-}
+} console.log(showCart)
 
 function removeItemFromCart(event) {
 
