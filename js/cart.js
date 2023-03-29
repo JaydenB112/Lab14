@@ -9,15 +9,14 @@ table.addEventListener('click', removeItemFromCart);
 function loadCart() {
   // const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
   let cartItems = undefined
-  cartItems = localStorage.getItem("cart-contents")
-  // let cartString = localStorage.getItem("cart")
-  let cartObject = JSON.parse(cartItems)
-  console.log(cartObject)
-  if (cartObject == undefined) {
-    cartItems = []
-  } else {
-    cartItems = cartObject
-  }
+  localStorage.getItem("cart-items")
+let cartString = localStorage.getItem("cart")
+let cartObject = JSON.parse(cartString)
+if(cartObject == undefined){
+  cartItems = []
+}else{
+  cartItems = cartObject.Items
+}
   state.cart = new Cart(cartItems);
 }
 // console.log(loadCart)
@@ -50,35 +49,26 @@ console.log(clearCart())
 function showCart() {
   let tableBody = document.querySelector("tbody")
 
-  for (let i = 0; i < state.cart.items.length; i++) {
+for(let i = 0; i < state.cart.items.length; i++){
 
+for  (let i = 0; i < state.cart.items.length; i++){
 
-
-    let daRow = document.createElement("tr")
-    // let daData = document.createElement("td")
-    let deleteData = document.createElement("td")
-    // let itemName = document.createElement('td')
-    let quantityData = document.createElement("td")
-    let itemData = document.createElement("td")
-    let deleteProduct = document.createElement('button')
-    deleteProduct.innerHTML = 'Delete'
-    //moire tds
-    itemData.innerHTML = state.cart.items[i].product.name
-    // itemName.innerHTML = state.cart.product.name
-    quantityData.innerHTML = state.cart.items[i]
-    console.log(state.cart.items[i])
-    //set other tds
-    //daRow.append(daData)
-    //append tds
-    // tableBody.append(daRow)
-    daRow.append(itemData)
-    daRow.append(quantityData)
-    deleteData.append(deleteProduct)
-    daRow.append(deleteData)
-    tableBody.append(daRow)
-    // deleteData.innerHTML = state.cart.items[i].product.name
-  }
-  //  console.log(showCart)
+  let daRow = document.createElement("tr")
+// let daData = document.createElement("td")
+let deleteData = document.createElement("td")
+let quantityData = document.createElement("td")
+let itemData = document.createElement("td")
+//moire tds
+itemData.innerHTML = state.cart.items[i].product.name
+//set other tds
+daRow.append(daData)
+//append tds
+tableBody.append(daRow)
+deleteData.append(deleteProduct)
+daRow.append(daData)
+tableBody.append(daRow)
+deleteData.innerHTML = state.cart.items[i].product.name
+} console.log(showCart)
 }
 
 // TODO: Find the table body
@@ -88,7 +78,7 @@ function showCart() {
 // TODO: Create a TD for the delete link, quantity,  and the item
 // TODO: Add the TR to the TBODY and each of the TD's to the TR
 
-//  console.log(showCart)
+} console.log(showCart)
 
 function removeItemFromCart(event) {
 
