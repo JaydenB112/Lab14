@@ -15,7 +15,7 @@ const Cart = function(items) {
 Cart.prototype.addItem = function(product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
   let newItem = new CartItem(product,quantity)
-  this.items.push(newItem)
+  state.cart.items.push(newItem)
 };
 
 
@@ -28,13 +28,15 @@ Cart.prototype.saveToLocalStorage = function() {
 Cart.prototype.removeItem = function(index) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
-  this.items.splice(index,1)
+  console.log(state.cart.items);
+  state.cart.items.splice(index,1)
+  console.log(state.cart.items)
 };
 
 Cart.prototype.updateCounter = function() {
   // TODO: Update the cart count in the header nav with the number of items in the Cart
   let itemCountHTML = document.getElementById("itemCount")
-  itemCountHTML.innerHTML = " " + this.items.length
+  itemCountHTML.innerHTML = " " + state.cart.items.length
 }
 
 const CartItem = function(product, quantity) {

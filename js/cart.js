@@ -76,7 +76,7 @@ function showCart() {
     daRow.append(quantityData)
     daRow.append(itemData)
     tableBody.append(daRow)
-    deleteProduct.addEventListener('click', state.cart.removeItem())
+    deleteProduct.addEventListener('click', removeItemFromCart)
     // deleteData.innerHTML = state.cart.items[i].product.name
   }
   //  console.log(showCart)
@@ -93,11 +93,12 @@ function showCart() {
 
 function removeItemFromCart(event) {
 
-
+console.log(event.target)
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
   // TODO: Save the cart back to local storage
   // TODO: Re-draw the cart table
 
+  //state.cart.removeItem[i]
 }
 
 // This will initialize the page and draw the cart on screen
