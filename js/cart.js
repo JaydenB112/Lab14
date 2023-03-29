@@ -48,11 +48,11 @@ console.log(clearCart())
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
 let tableBody = document.querySelector("tbody")
-<<<<<<< HEAD
+
 for(let i = 0; i < state.cart.items.length; i++){
-=======
+
 for  (let i = 0; i < state.cart.items.length; i++){
->>>>>>> ec10e281ccd8b1c563439e917ec13caaeb0134ea
+
   let daRow = document.createElement("tr")
 // let daData = document.createElement("td")
 let deleteData = document.createElement("td")
@@ -64,7 +64,13 @@ itemData.innerHTML = state.cart.items[i].product.name
 daRow.append(daData)
 //append tds
 tableBody.append(daRow)
+deleteData.append(deleteProduct)
+daRow.append(daData)
+tableBody.append(daRow)
+deleteData.innerHTML = state.cart.items[i].product.name
 } console.log(showCart)
+}
+let deleteProduct = document.createElement('button')
 
   // TODO: Find the table body
 
