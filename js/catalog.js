@@ -49,6 +49,9 @@ function addSelectedItemToCart() {
     }
   }
 
+  let quantityHTML = document.getElementById("quantity")
+  let quantity = quantityHTML.value
+state.cart.addItem(productObject, quantity)
 
 }
 
@@ -63,8 +66,8 @@ function updateCartPreview() {
 
   // for(let i = 0; i < state.allProducts.length; i++){
   // }
-preview.innerHTML = '${itemQuantity} ${itemName}';
-  document.getElementById('cartContents').append()
+preview.innerHTML = "Item " + itemName + " Quantity " + itemQuantity;
+  document.getElementById('cartContents').append(preview)
 }
 
 // Set up the "submit" event listener on the form.
