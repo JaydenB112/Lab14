@@ -72,9 +72,9 @@ function showCart() {
     //append tds
     // tableBody.append(daRow)
     deleteData.append(deleteProduct)
+    daRow.append(deleteData)
     daRow.append(quantityData)
     daRow.append(itemData)
-    daRow.append(deleteData)
     tableBody.append(daRow)
     // deleteData.innerHTML = state.cart.items[i].product.name
   }
