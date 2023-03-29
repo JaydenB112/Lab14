@@ -48,7 +48,7 @@ console.log(clearCart())
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
 let tableBody = document.querySelector("tbody")
-for(i = 0; i < state.cart.items.length; i++){
+for(let i = 0; i < state.cart.items.length; i++){
   let daRow = document.createElement("tr")
 // let daData = document.createElement("td")
 let deleteData = document.createElement("td")

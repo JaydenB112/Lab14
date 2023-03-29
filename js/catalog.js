@@ -37,7 +37,7 @@ function handleSubmit(event) {
 
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
-  // TODO: suss out the item picked from the select list
+  // TODO:  out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
   let select = document.getElementById("items")
@@ -48,6 +48,10 @@ function addSelectedItemToCart() {
       productObject = state.allProducts[i]
     }
   }
+  let quantityHTML = document.getElementById('quantity')
+  let quantity = quantityHTML.value
+  state.cart.addItem(productObject,quantity)
+  console.log(productObject)
 
 
 }
@@ -60,6 +64,7 @@ function updateCartPreview() {
   let itemQuantity = document.getElementById('quantity').value
   let preview = document.createElement('p')
   preview.id = 'fred'
+  
 
   // for(let i = 0; i < state.allProducts.length; i++){
   // }
