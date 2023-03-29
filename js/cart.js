@@ -65,7 +65,7 @@ function showCart() {
     //moire tds
     itemData.innerHTML = state.cart.items[i].product.name
     // itemName.innerHTML = state.cart.product.name
-    quantityData.innerHTML = state.cart.items[i]
+    quantityData.innerHTML = state.cart.items[i].quantity
     console.log(state.cart.items[i])
     //set other tds
     //daRow.append(daData)
@@ -76,6 +76,7 @@ function showCart() {
     daRow.append(quantityData)
     daRow.append(itemData)
     tableBody.append(daRow)
+    deleteProduct.addEventListener('click', state.cart.removeItem())
     // deleteData.innerHTML = state.cart.items[i].product.name
   }
   //  console.log(showCart)
