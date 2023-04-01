@@ -66,12 +66,14 @@ function showCart() {
     //daRow.append(daData)
     //append tds
     // tableBody.append(daRow)
+
     deleteData.append(deleteProduct);
     daRow.append(deleteData);
     daRow.append(quantityData);
     daRow.append(itemData);
     tableBody.append(daRow);
     deleteProduct.addEventListener("click", removeItemFromCart);
+
     // deleteData.innerHTML = state.cart.items[i].product.name
   }
   //  console.log(showCart)
@@ -87,6 +89,7 @@ function showCart() {
 //  console.log(showCart)
 
 function removeItemFromCart(event) {
+
   console.log(event.target.product);
 let productIndex = event.target.product
 state.cart.removeItem(productIndex)
@@ -94,6 +97,7 @@ state.cart.removeItem(productIndex)
 state.cart.saveToLocalStorage()
 renderCart()
 // state.cart..innerHTML
+
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
   // TODO: Save the cart back to local storage
   // TODO: Re-draw the cart table
